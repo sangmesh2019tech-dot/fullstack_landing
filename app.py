@@ -30,6 +30,15 @@ def submit():
 
     return jsonify({"message": "Thank you! Your details have been saved."})
 
+from flask import send_file
+
+@app.route("/download")
+def download():
+    return send_file("contacts.csv", as_attachment=True)
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
+
